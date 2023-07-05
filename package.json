@@ -1,5 +1,5 @@
 {
-  "name": "EXPRESS_SERVER",
+  "name": "bankserver",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,5 +12,8 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
-  }
+  },
+  "description": "this helps you to manage your bank accounts",
+  "repository": "bankserver",
+  "author": "JOSH <joshuadoe168@gmail>"
 }

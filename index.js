@@ -1,28 +1,33 @@
-const express = require('express');
-const path =  require('path');
+//import express, body-parser
+const express = require('express')
 const bodyParser = require('body-parser');
+const json = require('body-parser/lib/types/json');
 
-const server = express('server');
+const {listBankController,updateBankController,createBankController,deleteBankController} = require ('./controllers')
 
-const loginRequestHandler = (req, res) => {
-//    let body = " ";
-//    req.on('data' , chunk => {
-//        body += chunk;
-//    });
 
-//    req.on('end', () => {
-//         //parse with regExp
+//create express server instance
+const server = express();
 
-//        console.log(body);
-//    })
-console.log(req.body)
-    res.send('Its working')
-}
-//middleware definitions
-server.use(express.static(path.join(__dirname, 'public')))
-server.use(bodyParser.urlencoded({extended: false}))
+//middlewares
+server.use(bodyParser.json());
 
-//route
-server.post('/login', loginRequestHandler)
 
-server.listen(3000,() => console.log('server is ready'));
+
+//routes
+// view bank - get method
+server.get('/bank', listBankController)
+//create bank - post method
+server.post('/bank', createBankController)
+//update bank - put method
+server.put('/bank', updateBankController)
+//delete bank - delete method
+server.delete('/bank', deleteBankController)
+
+
+
+
+
+
+//start server
+server.listen(3000, () => console.log('server is ready'))
