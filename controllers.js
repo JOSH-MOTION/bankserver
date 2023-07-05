@@ -1,5 +1,5 @@
  
- const BankModel = require ('./model');
+ 
  //controllers
 const listBankController = (req, res) => {
     //list all banks
