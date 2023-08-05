@@ -4,13 +4,9 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const json = require('body-parser/lib/types/json');
 
-const {listBankController,
-    updateBankController,
-    createBankController,
-    deleteBankController, 
-    createAccountController,
-    listAccountController
-} = require ('./controllers');
+const accountRoutes = require('./routes/account');
+const bankRoutes = require('./routes/bank');
+
 
 
 //create express server instance
@@ -21,19 +17,9 @@ server.use(bodyParser.json());
 
 
 
-//routes
-// view bank - get method
-server.get('/bank/:id?', listBankController);
-//create bank - post method
-server.post('/bank', createBankController);
-//update bank - put method
-server.put('/bank',updateBankController);
-//delete bank - delete method
-server.delete('/bank', deleteBankController);
-
-server.post("/account", createAccountController);
-
-server.get('/accounts', listAccountController);
+//Routes
+server.use(accountRoutes);
+server.use(bankRoutes)
 
 
 
