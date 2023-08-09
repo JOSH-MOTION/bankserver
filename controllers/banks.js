@@ -22,6 +22,7 @@ const listBankController = (req, res) => {
 
 const createBankController = (req, res) => {
     //create a bank
+    
     //validation checks
     const errors = validationResult(req);
     if(!errors.isEmpty()){

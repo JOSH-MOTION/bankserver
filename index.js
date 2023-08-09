@@ -2,10 +2,9 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const json = require('body-parser/lib/types/json');
-
 const accountRoutes = require('./routes/account');
 const bankRoutes = require('./routes/bank');
+const userRoutes = require('./routes/user')
 
 
 
@@ -19,7 +18,8 @@ server.use(bodyParser.json());
 
 //Routes
 server.use(accountRoutes);
-server.use(bankRoutes)
+server.use(bankRoutes);
+server.use(userRoutes)
 
 
 

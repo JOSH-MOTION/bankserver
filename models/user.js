@@ -19,9 +19,9 @@ password:{
 
 accounts: [
     {
-        type: Schema.Types.ObjectId,
-        ref: "Account"
-    },]
+         id: {type: Schema.Types.ObjectId,ref: "Account"}
+    }
+  ]
 });
 
 
